@@ -53,7 +53,7 @@ def build_workspace(config, reset, keep):
     current_tab_index = guake_current()
 
     for i, tab in enumerate(config):
-        if i != 0 and not keep:
+        if i != 0 or keep:
             guake_new(tab['path'])
         init_tab(tab)
 
