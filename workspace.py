@@ -55,6 +55,8 @@ def build_workspace(config, reset, keep):
     for i, tab in enumerate(config):
         if i != 0 or keep:
             guake_new(tab['path'])
+        else:
+            guake_run('cd {}'.format(tab['path']))
         init_tab(tab)
 
     guake_focus(current_tab_index)
